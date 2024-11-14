@@ -1,0 +1,174 @@
+@use 'hero';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$bgColor: #000000;
+$mainTextColor: beige;
+$secondarybgColor: #BC9E5F;
+
+
+body {  
+    background-color: $bgColor;
+    font-family: "Courier Prime", monospace;
+    color: $mainTextColor;
+    height: 100vh;
+    width: 100vw;
+    
+}
+section{
+    .hidden {
+        opacity: 0;
+        transition: all 4s;
+    }
+
+    .visible {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+
+.sinopse {
+    min-height: 100vh;
+    font-size: 1.2em;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+    }
+        
+    &__image {
+        
+        width: 100%;
+        margin-left: 40px;
+        max-height: 400px;
+        object-fit: cover;
+        background-blend-mode: multiply;
+    }
+
+    }
+
+.historiareal {
+    display: flex;
+    min-height: 100vh;
+    font-size: 1.2em;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondarybgColor;
+    color: #000000;
+    font-family: "Special Elite", system-ui;
+    
+    &__content {
+        max-width: 100%;
+}}
+
+.elenco {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 64px;
+    font-size: 1.2em;
+    font-family: "Special Elite", system-ui;
+    font-weight: lighter;
+    background-color: #564b34;
+    justify-content: center;
+    
+    
+    li {
+        list-style: none;
+    }
+    
+    .title {
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 32px;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin: 0 32px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        &__item {
+            max-width: 208px;
+            width: 100%;
+            img {
+                max-width: 100%;
+            }
+
+            .title--small {
+                text-align: center;
+                padding-top: 13px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+    }
+}
+
+.review {
+    font-size: 1.2em;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 800px;
+    min-height: 100vh;
+    text-align: center;
+    
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__content {
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        
+
+        &__text {
+            align-items: center;
+            border: 1px solid;
+        }
+
+    }
+}
+
+.footer {
+    background-color: $secondarybgColor;
+
+    &__content {
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            padding: 16px;
+
+            a {
+                color: #564b34;
+                &:hover {
+                    color: #485321e0;
+                }
+            }
+        }
+    }
+}
